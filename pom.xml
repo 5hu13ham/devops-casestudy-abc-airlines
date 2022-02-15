@@ -11,10 +11,12 @@
 	<groupId>devops-casestudy-abc-airlines</groupId>
 	<artifactId>devops-casestudy-abc-airlines</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>devops-casestudy-abc</name>
+	<name>devops-casestudy-abc-airlines</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<surefire.version>2.17</surefire.version>
+		<jkube.version>1.1.1</jkube.version>
 	</properties>
 	
 	<distributionManagement>
@@ -66,11 +68,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+	
 		
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
 		</dependency>
+		
 		
 		<dependency>
 <groupId>org.apache.tomcat.embed</groupId>
@@ -91,6 +96,18 @@
 			</plugin>
 			
 			<plugin>
+<groupId>org.eclipse.jkube</groupId>
+<artifactId>kubernetes-maven-plugin</artifactId>
+<version>${jkube.version}</version>
+</plugin>
+
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+</plugin>
+			
+			
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>3.0.0-M1</version>
@@ -101,10 +118,7 @@
 			</plugin>
 			
 			
-	<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-surefire-plugin</artifactId>
-  </plugin>
+
 			
 			
 			 <plugin>
@@ -137,7 +151,7 @@
                                         <limit>
                                             <counter>COMPLEXITY</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.20</minimum>
+                                            <minimum>0.10</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
