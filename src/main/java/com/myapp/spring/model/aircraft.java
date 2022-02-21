@@ -40,13 +40,13 @@ public class aircraft {
 	private String schedules;
 	
 	@Column(name = "total_seats", nullable = false)
-	private String totalSeats;
+	private int totalSeats;
 	
 	@Column(name = "booked_seats", nullable = false)
-	private String bookedSeats;
+	private int bookedSeats;
 	
 	@Column(name = "available_seats", nullable = false)
-	private String availableSeats;
+	private int availableSeats;
 	
 	@Column(name = "departure_date", nullable = false)
 	private LocalDate date ;
@@ -58,9 +58,11 @@ public class aircraft {
 		// TODO Auto-generated constructor stub
 	}
 
+
+
 	public aircraft(Integer flightId, String flightName, String sourceCity, String destinationCity, Double price,
-			Double duration, String aircraftType, String schedules, String totalSeats, String bookedSeats,
-			String availableSeats, LocalDate date) {
+			Double duration, String aircraftType, String schedules, int totalSeats, int bookedSeats, int availableSeats,
+			LocalDate date) {
 		this.flightId = flightId;
 		this.flightName = flightName;
 		this.sourceCity = sourceCity;
@@ -74,108 +76,160 @@ public class aircraft {
 		this.availableSeats = availableSeats;
 		this.date = date;
 	}
+
+
 
 	public Integer getFlightId() {
 		return flightId;
 	}
 
+
+
 	public void setFlightId(Integer flightId) {
 		this.flightId = flightId;
 	}
+
+
 
 	public String getFlightName() {
 		return flightName;
 	}
 
+
+
 	public void setFlightName(String flightName) {
 		this.flightName = flightName;
 	}
+
+
 
 	public String getSourceCity() {
 		return sourceCity;
 	}
 
+
+
 	public void setSourceCity(String sourceCity) {
 		this.sourceCity = sourceCity;
 	}
+
+
 
 	public String getDestinationCity() {
 		return destinationCity;
 	}
 
+
+
 	public void setDestinationCity(String destinationCity) {
 		this.destinationCity = destinationCity;
 	}
+
+
 
 	public Double getPrice() {
 		return price;
 	}
 
+
+
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+
 
 	public Double getDuration() {
 		return duration;
 	}
 
+
+
 	public void setDuration(Double duration) {
 		this.duration = duration;
 	}
+
+
 
 	public String getAircraftType() {
 		return aircraftType;
 	}
 
+
+
 	public void setAircraftType(String aircraftType) {
 		this.aircraftType = aircraftType;
 	}
+
+
 
 	public String getSchedules() {
 		return schedules;
 	}
 
+
+
 	public void setSchedules(String schedules) {
 		this.schedules = schedules;
 	}
 
-	public String getTotalSeats() {
+
+
+	public int getTotalSeats() {
 		return totalSeats;
 	}
 
-	public void setTotalSeats(String totalSeats) {
+
+
+	public void setTotalSeats(int totalSeats) {
 		this.totalSeats = totalSeats;
 	}
 
-	public String getBookedSeats() {
+
+
+	public int getBookedSeats() {
 		return bookedSeats;
 	}
 
-	public void setBookedSeats(String bookedSeats) {
+
+
+	public void setBookedSeats(int bookedSeats) {
 		this.bookedSeats = bookedSeats;
 	}
 
-	public String getAvailableSeats() {
+
+
+	public int getAvailableSeats() {
 		return availableSeats;
 	}
 
-	public void setAvailableSeats(String availableSeats) {
+
+
+	public void setAvailableSeats(int availableSeats) {
 		this.availableSeats = availableSeats;
 	}
+
+
 
 	public LocalDate getDate() {
 		return date;
 	}
 
+
+
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+
+
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(aircraftType, availableSeats, bookedSeats, date, destinationCity, duration, flightId,
 				flightName, price, schedules, sourceCity, totalSeats);
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -184,13 +238,15 @@ public class aircraft {
 		if (!(obj instanceof aircraft))
 			return false;
 		aircraft other = (aircraft) obj;
-		return Objects.equals(aircraftType, other.aircraftType) && Objects.equals(availableSeats, other.availableSeats)
-				&& Objects.equals(bookedSeats, other.bookedSeats) && Objects.equals(date, other.date)
+		return Objects.equals(aircraftType, other.aircraftType) && availableSeats == other.availableSeats
+				&& bookedSeats == other.bookedSeats && Objects.equals(date, other.date)
 				&& Objects.equals(destinationCity, other.destinationCity) && Objects.equals(duration, other.duration)
 				&& Objects.equals(flightId, other.flightId) && Objects.equals(flightName, other.flightName)
 				&& Objects.equals(price, other.price) && Objects.equals(schedules, other.schedules)
-				&& Objects.equals(sourceCity, other.sourceCity) && Objects.equals(totalSeats, other.totalSeats);
+				&& Objects.equals(sourceCity, other.sourceCity) && totalSeats == other.totalSeats;
 	}
+
+
 
 	@Override
 	public String toString() {
@@ -226,7 +282,5 @@ public class aircraft {
 	
 	
 	
-}
-	
-	
-	
+
+	}	
