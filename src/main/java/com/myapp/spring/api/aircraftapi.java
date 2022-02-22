@@ -11,27 +11,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myapp.spring.model.aircraft;
-import com.myapp.spring.repository.aircraftrepo;
+import com.myapp.spring.model.Aircraft;
+import com.myapp.spring.repository.AircraftRepo;
 
 @RestController
 @RequestMapping("/api/v1/flights")
-public class aircraftapi {
+public class AircraftApi {
 	
 	@Autowired
-	private aircraftrepo repository;
+	private AircraftRepo repository;
 	
 	@GetMapping
-	public ResponseEntity<List<aircraft>> findAll(){
+	public ResponseEntity<List<Aircraft>> findAll(){
 
-	return new ResponseEntity<List<aircraft>>(repository.findAll(), HttpStatus.OK);
+	return new ResponseEntity<List<Aircraft>>(repository.findAll(), HttpStatus.OK);
 	}
 	
-	@GetMapping("/findByAircraftTypeandSchedules")
-	public ResponseEntity<List<aircraft>> findByAircraftTypeAndSchedules
+	@GetMapping("/findByAircraftTypeAndSchedules")
+	public ResponseEntity<List<Aircraft>> findByAircraftTypeAndSchedules
 	(@RequestParam("aircraftType") String aircraftType,
 	@RequestParam("schedules") String schedules){
-	return new ResponseEntity<List<aircraft>>
+	return new ResponseEntity<List<Aircraft>>
 	(repository.findByAircraftTypeAndSchedules(aircraftType,schedules), HttpStatus.OK);
 	}
 }

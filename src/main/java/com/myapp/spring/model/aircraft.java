@@ -10,9 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "devopsflights")
-public class aircraft {
+public class Aircraft {
 	@Id
 	@Column(name = "flight_id",nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO )
@@ -53,17 +55,16 @@ public class aircraft {
 	
 	
 	
-	public aircraft() {
+	public Aircraft() {
 		
 		// TODO Auto-generated constructor stub
 	}
 
 
 
-	public aircraft(Integer flightId, String flightName, String sourceCity, String destinationCity, Double price,
+	public Aircraft( String flightName, String sourceCity, String destinationCity, Double price,
 			Double duration, String aircraftType, String schedules, int totalSeats, int bookedSeats, int availableSeats,
 			LocalDate date) {
-		this.flightId = flightId;
 		this.flightName = flightName;
 		this.sourceCity = sourceCity;
 		this.destinationCity = destinationCity;
@@ -235,9 +236,9 @@ public class aircraft {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (!(obj instanceof aircraft))
+		if (!(obj instanceof Aircraft))
 			return false;
-		aircraft other = (aircraft) obj;
+		Aircraft other = (Aircraft) obj;
 		return Objects.equals(aircraftType, other.aircraftType) && availableSeats == other.availableSeats
 				&& bookedSeats == other.bookedSeats && Objects.equals(date, other.date)
 				&& Objects.equals(destinationCity, other.destinationCity) && Objects.equals(duration, other.duration)

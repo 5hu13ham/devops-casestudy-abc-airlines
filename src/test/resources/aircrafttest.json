@@ -1,0 +1,41 @@
+[
+{
+"flightId":1,
+"flightName":"6E535",
+"sourceCity":"Bangalore",
+"destinationCity":"Kolkata",
+"price":3500.0,
+"duration":2.5,
+"aircraftType":"Indigo",
+"schedules":"2022-02-25 6:15 pm",
+"totalSeats":150,
+"bookedSeats":25,
+"availableSeats":125
+},
+{
+"flightId":2,
+"flightName":"6E534",
+"sourceCity":"Bangalore",
+"destinationCity":"Chandigarh",
+"price":3500.0,
+"duration":2.5,
+"aircraftType":"Indigo",
+"schedules":"2022-02-25 6:14 pm",
+"totalSeats":150,
+"bookedSeats":25,
+"availableSeats":125
+},
+{
+"flightId":3,
+"flightName":"AI953",
+"sourceCity":"Mumbai",
+"destinationCity":"Delhi",
+"price":1897.6,
+"duration":1.25,
+"aircraftType":"AirIndia",
+"schedules":"2022-12-09 7:45 pm",
+"totalSeats":150,
+"bookedSeats":25,
+"availableSeats":125
+}
+]

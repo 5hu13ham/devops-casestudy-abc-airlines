@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.myapp.spring.model.aircraft;
+import com.myapp.spring.model.Aircraft;
 
 
-public interface aircraftrepo extends JpaRepository<aircraft, Integer>{
+public interface AircraftRepo extends JpaRepository<Aircraft, Integer>{
 	
-	List<aircraft> findByAircraftTypeAndSchedules(String aircraftType, String schedules);
+	List<Aircraft> findByAircraftTypeAndSchedules(String aircraftType, String schedules);
 
 }
