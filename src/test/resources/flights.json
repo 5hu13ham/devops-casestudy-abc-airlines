@@ -1,0 +1,18 @@
+[
+  {
+    "flightId": 244,
+    "flightName": "INDIGO",
+    "date": "2022-02-22",
+    "totalSeats": 150,
+    "bookedSeats": 75,
+    "availableSeats": 75
+  },
+  {
+    "flightId": 245,
+    "flightName": "SpiceJet",
+    "date": "2022-03-12",
+    "totalSeats": 135,
+    "bookedSeats": 100,
+    "availableSeats": 35
+  }
+]

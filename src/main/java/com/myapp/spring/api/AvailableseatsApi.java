@@ -25,13 +25,13 @@ public class AvailableseatsApi {
 	private AvailableseatsRepository repository;
 	
 	
-	@PostMapping
+	/*@PostMapping
 	public ResponseEntity<List<Flight>> ProductsInsert
 	(@RequestBody List<Flight> flights){
 
 	return new ResponseEntity<List<Flight>>(repository.saveAll(flights),
 	HttpStatus.CREATED);
-	}
+	}*/
 	
 	
 	@GetMapping
@@ -47,7 +47,7 @@ public class AvailableseatsApi {
 		
 	return new ResponseEntity<>
 	(repository.findAvailableSeatsByFlightId(flightId), HttpStatus.OK);
-	//return availableSeats;
+	
 	
 	
     
