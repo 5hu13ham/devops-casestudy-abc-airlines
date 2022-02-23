@@ -12,7 +12,9 @@
 
 "price":2345.6,
 
-"duration":1.45
+"duration":1.45,
+
+"date":"2022-12-09"
 
 
 
@@ -30,7 +32,9 @@
 
 "price":3456.6,
 
-"duration":4.5
+"duration":4.5,
+
+"date":"2022-02-18"
 
 
 
@@ -49,7 +53,9 @@
 
 "price":1897.6,
 
-"duration":1.25
+"duration":1.25,
+
+"date":"2022-02-18"
 
 
 

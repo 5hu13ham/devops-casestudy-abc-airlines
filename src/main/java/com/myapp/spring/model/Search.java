@@ -1,5 +1,7 @@
 package com.myapp.spring.model;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,12 +11,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 
 
 @Entity
 @Table(name = "abcflights")
-public class Flight {
+public class Search {
 	@Id
 	@Column(name = "flight_id",nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO )
@@ -36,21 +40,23 @@ public class Flight {
 	@Column(name = "duration",nullable = false)
 	private Double duration;
 	
-	
+	@Column(name = "departure_date",nullable = false)
+	@JsonFormat(pattern="yyyy-MM-dd")
+	private Date date;
 	
 
-	public Flight() {
+	public Search() {
 		
 		// TODO Auto-generated constructor stub
 	}
 
-	public Flight(String flightName, String sourceCity, String destinationCity, Double price, Double duration) {
+	public Search(String flightName, String sourceCity, String destinationCity, Double price, Double duration,Date date) {
 		this.flightName = flightName;
 		this.sourceCity = sourceCity;
 		this.destinationCity = destinationCity;
 		this.price = price;
 		this.duration = duration;
-		
+		this.date = date;
 	}
 
 	public Integer getFlightId() {
@@ -101,10 +107,17 @@ public class Flight {
 		this.duration = duration;
 	}
 	
-	
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(flightId,flightName,sourceCity,destinationCity,price,duration);
+		return Objects.hash(flightId,flightName,sourceCity,destinationCity,price,duration,date);
 	}
 	
 	
@@ -113,12 +126,12 @@ public class Flight {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (!(obj instanceof Flight))
+		if (!(obj instanceof Search))
 			return false;
-		Flight other = (Flight) obj;
+		Search other = (Search) obj;
 		return Objects.equals(flightId, other.flightId) && Objects.equals(flightName, other.flightName)  && Objects.equals(sourceCity, other.sourceCity)  
 				&& Objects.equals(destinationCity, other.destinationCity) && Objects.equals(duration, other.duration)
-				&& Objects.equals(price, other.price);
+				&& Objects.equals(price, other.price) && Objects.equals(date, other.date);
 	}
 
 	@Override
@@ -136,6 +149,8 @@ public class Flight {
 		builder.append(price);
 		builder.append(", duration=");
 		builder.append(duration);
+		builder.append(", date=");
+		builder.append(date);
 		builder.append("]");
 		return builder.toString();
 	}
