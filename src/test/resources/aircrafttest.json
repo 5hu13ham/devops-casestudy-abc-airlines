@@ -10,7 +10,8 @@
 "schedules":"2022-02-25 6:15 pm",
 "totalSeats":150,
 "bookedSeats":25,
-"availableSeats":125
+"availableSeats":125,
+"date": "2022-02-25"
 },
 {
 "flightId":2,
@@ -23,7 +24,8 @@
 "schedules":"2022-02-25 6:14 pm",
 "totalSeats":150,
 "bookedSeats":25,
-"availableSeats":125
+"availableSeats":125,
+"date": "2022-02-25"
 },
 {
 "flightId":3,
@@ -36,6 +38,7 @@
 "schedules":"2022-12-09 7:45 pm",
 "totalSeats":150,
 "bookedSeats":25,
-"availableSeats":125
+"availableSeats":125,
+"date": "2022-02-25"
 }
 ]

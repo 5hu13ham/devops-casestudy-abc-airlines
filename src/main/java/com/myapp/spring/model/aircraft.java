@@ -1,6 +1,6 @@
 package com.myapp.spring.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -50,8 +50,9 @@ public class Aircraft {
 	@Column(name = "available_seats", nullable = false)
 	private int availableSeats;
 	
-	@Column(name = "departure_date", nullable = false)
-	private LocalDate date ;
+	@Column(name = "departure_date",nullable = false)
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date date ;
 	
 	
 	
@@ -64,7 +65,7 @@ public class Aircraft {
 
 	public Aircraft( String flightName, String sourceCity, String destinationCity, Double price,
 			Double duration, String aircraftType, String schedules, int totalSeats, int bookedSeats, int availableSeats,
-			LocalDate date) {
+			Date date) {
 		this.flightName = flightName;
 		this.sourceCity = sourceCity;
 		this.destinationCity = destinationCity;
@@ -212,13 +213,13 @@ public class Aircraft {
 
 
 
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
 
 
 
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

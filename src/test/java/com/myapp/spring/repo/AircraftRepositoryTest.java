@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Arrays;
+import java.util.Date;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -69,8 +71,7 @@ public class AircraftRepositoryTest {
 		
 		// given a mock aircraft
 		LocalDate localdate1 = LocalDate.of(2022,02,26);
-		Aircraft aircrafts = new Aircraft("6E537","Bangalore","Kolkata",3500.0,2.5,"Indigo","2022-02-26 7:15 pm",150,25,125,localdate1);
-		aircrafts.setFlightId(5);
+		Aircraft aircrafts = new Aircraft("6E537","Bangalore","Kolkata",3500.0,2.5,"Indigo","2022-02-26 7:15 pm",150,25,125,Date.from(localdate1.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
 		
 		// when we retrieve an aircraft using non existing id
 		Aircraft newaircrafts=repository.save(aircrafts);

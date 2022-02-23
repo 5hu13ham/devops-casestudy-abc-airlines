@@ -9,7 +9,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
@@ -83,11 +85,11 @@ public class AircraftApiTest {
 		
 		// Prepare Mock Product
 		LocalDate localdate1 = LocalDate.of(2022, 02,25);
-		Aircraft aircraft1 = new Aircraft("6E535","Bangalore","Kolkata",3500.0,2.5,"Indigo","2022-02-25 6:15 pm",150,25,125, localdate1);
+		Aircraft aircraft1 = new Aircraft("6E535","Bangalore","Kolkata",3500.0,2.5,"Indigo","2022-02-25 6:15 pm",150,25,125, Date.from(localdate1.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
 		aircraft1.setFlightId(35);
 		
 		LocalDate localdate2 = LocalDate.of(2022, 02,25);
-		Aircraft aircraft2 = new Aircraft("6E534","Bangalore","Kolkata",3500.0,2.5,"Indigo","2022-02-25 6:16 pm",150,25,125,localdate2);
+		Aircraft aircraft2 = new Aircraft("6E534","Bangalore","Kolkata",3500.0,2.5,"Indigo","2022-02-25 6:16 pm",150,25,125,Date.from(localdate2.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
 		aircraft2.setFlightId(36);
 		
 		List<Aircraft> aircrafts = new ArrayList<>();
@@ -123,7 +125,7 @@ public class AircraftApiTest {
 		.andExpect(jsonPath("$[0].totalSeats",is(150)))
 		.andExpect(jsonPath("$[0].bookedSeats",is(25)))
 		.andExpect(jsonPath("$[0].availableSeats",is(125)))
-		.andExpect(jsonPath("$[0].date",is("2022-02-25")))
+		.andExpect(jsonPath("$[0].date",is("2022-02-24")))
 		
 		.andExpect(jsonPath("$[1].flightId", is(36)))
 		.andExpect(jsonPath("$[1].flightName", is("6E534")))
@@ -136,7 +138,7 @@ public class AircraftApiTest {
 		.andExpect(jsonPath("$[1].totalSeats",is(150)))
 		.andExpect(jsonPath("$[1].bookedSeats",is(25)))
 		.andExpect(jsonPath("$[1].availableSeats",is(125)))
-		.andExpect(jsonPath("$[1].date",is("2022-02-25")));
+		.andExpect(jsonPath("$[1].date",is("2022-02-24")));
 		
 		
 		
