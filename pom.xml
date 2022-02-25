@@ -11,7 +11,7 @@
 	<groupId>devops-casestudy-abc-airlines</groupId>
 	<artifactId>devops-casestudy-abc-airlines</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>devops-casestudy-abc</name>
+	<name>devops-casestudy-abc-airlines</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -67,10 +67,6 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
 		
 		<dependency>
 <groupId>org.apache.tomcat.embed</groupId>
