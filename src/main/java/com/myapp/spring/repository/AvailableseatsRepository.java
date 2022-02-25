@@ -6,12 +6,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.myapp.spring.model.Flight;
+import com.myapp.spring.model.Flightseats;
 import com.myapp.spring.model.FlightAvailable;
 
 
 
-public interface AvailableseatsRepository extends JpaRepository<Flight, Integer>{
+public interface AvailableseatsRepository extends JpaRepository<Flightseats, Integer>{
 	
 	
 	

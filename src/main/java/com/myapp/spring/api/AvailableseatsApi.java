@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myapp.spring.model.Flight;
+import com.myapp.spring.model.Flightseats;
 
 import com.myapp.spring.model.FlightAvailable;
 import com.myapp.spring.repository.AvailableseatsRepository;
@@ -25,19 +25,19 @@ public class AvailableseatsApi {
 	private AvailableseatsRepository repository;
 	
 	
-	/*@PostMapping
-	public ResponseEntity<List<Flight>> ProductsInsert
-	(@RequestBody List<Flight> flights){
+	@PostMapping
+	public ResponseEntity<List<Flightseats>> ProductsInsert
+	(@RequestBody List<Flightseats> flights){
 
-	return new ResponseEntity<List<Flight>>(repository.saveAll(flights),
+	return new ResponseEntity<List<Flightseats>>(repository.saveAll(flights),
 	HttpStatus.CREATED);
-	}*/
+	}
 	
 	
 	@GetMapping
-	public ResponseEntity<List<Flight>> findAll(){
+	public ResponseEntity<List<Flightseats>> findAll(){
 
-	return new ResponseEntity<List<Flight>>(repository.findAll(), HttpStatus.OK);
+	return new ResponseEntity<List<Flightseats>>(repository.findAll(), HttpStatus.OK);
 	}
 	
 	

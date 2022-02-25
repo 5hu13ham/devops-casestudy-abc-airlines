@@ -23,7 +23,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.myapp.spring.model.Flight;
+import com.myapp.spring.model.Flightseats;
 import com.myapp.spring.repository.AvailableseatsRepository;
 
 
@@ -106,16 +106,16 @@ public class AvailableseatsApiTest {
 
 	// Prepare Mock Flight
 		LocalDate localDate =LocalDate.of(2022,02,23);
-		Flight flight1 = new Flight( "INDIGO", Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()), 150, 75, 75);
+		Flightseats flight1 = new Flightseats( "INDIGO", Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()), 150, 75, 75);
 		flight1.setFlightId(244);
 
 		LocalDate localDate2 =LocalDate.of(2022,03,13);
-		Flight flight2 = new Flight("SpiceJet", Date.from(localDate2.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()), 135, 100, 35);
+		Flightseats flight2 = new Flightseats("SpiceJet", Date.from(localDate2.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()), 135, 100, 35);
 		flight2.setFlightId(245);
 		
 
 
-	List<Flight> flights = new ArrayList<>();
+	List<Flightseats> flights = new ArrayList<>();
 	flights.add(flight1);
 	flights.add(flight2);
 

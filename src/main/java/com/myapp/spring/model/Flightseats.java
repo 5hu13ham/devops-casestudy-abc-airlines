@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "abcflights")
-public class Flight {
+public class Flightseats {
 	@Id
 	@Column(name = "flight_id",nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO )
@@ -41,12 +41,12 @@ public class Flight {
 	@Column(name = "available_seats",nullable = false)
 	private Integer availableSeats;
 
-	public Flight() {
+	public Flightseats() {
 		
 		// TODO Auto-generated constructor stub
 	}
 
-	public Flight( String flightName, Date date, Integer totalSeats, Integer bookedSeats,
+	public Flightseats( String flightName, Date date, Integer totalSeats, Integer bookedSeats,
 			Integer availableSeats) {
 		
 		this.flightName = flightName;
@@ -119,9 +119,9 @@ public class Flight {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (!(obj instanceof Flight))
+		if (!(obj instanceof Flightseats))
 			return false;
-		Flight other = (Flight) obj;
+		Flightseats other = (Flightseats) obj;
 		return Objects.equals(availableSeats, other.availableSeats) && Objects.equals(bookedSeats, other.bookedSeats)
 				&& Objects.equals(date, other.date) && Objects.equals(flightId, other.flightId)
 				&& Objects.equals(flightName, other.flightName) && Objects.equals(totalSeats, other.totalSeats);

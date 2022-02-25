@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.myapp.spring.model.Flight;
+import com.myapp.spring.model.Flightseats;
 
 
 @SpringBootTest
@@ -30,14 +30,14 @@ public class AvailableseatsRepositoryTest {
 	@Autowired
 	private AvailableseatsRepository repository;
 
-	private static File DATA_JSON= Paths.get("src","test","resources","flights.json").toFile();
+	private static File DATA_JSON= Paths.get("src","test","resources","flightseats.json").toFile();
 
 
 	@BeforeEach
 	public void setUp() throws JsonParseException, JsonMappingException, IOException {
 
 		
-	Flight flights[]=new ObjectMapper().readValue(DATA_JSON, Flight[].class);
+	Flightseats flights[]=new ObjectMapper().readValue(DATA_JSON, Flightseats[].class);
 
 	// save each product to database
 	Arrays.stream(flights).forEach(repository::save);
@@ -56,7 +56,7 @@ public class AvailableseatsRepositoryTest {
 	// given three products in the database
 
 	// when we retrieve a product using non existing id
-	Flight flight=repository.findById(100).orElseGet(()-> new Flight());
+	Flightseats flight=repository.findById(100).orElseGet(()-> new Flightseats());
 
 	// Then perform Assert Conditions To validate
 	Assertions.assertNull(flight.getFlightId(),
@@ -71,11 +71,11 @@ public class AvailableseatsRepositoryTest {
 
 	// given a mock product
 		LocalDate localDate =LocalDate.of(2022,02,22);
-		Flight flight = new Flight("INDIGO", Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()), 150, 75, 75);
+		Flightseats flight = new Flightseats("INDIGO", Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()), 150, 75, 75);
 		flight.setFlightId(244);
 
 	// when we retrieve a flight using non existing id
-	Flight savedFlight=repository.save(flight);
+	Flightseats savedFlight=repository.save(flight);
 
 	// Then perform Assert Conditions To validate
 	Assertions.assertNotNull(savedFlight,
