@@ -11,7 +11,9 @@
 	<artifactId>devops-casestudy-abc-airlines</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+
 	<packaging>jar</packaging>
+
 
 	<name>devops-casestudy-abc-airlines</name>
 	<description>Demo project for Spring Boot</description>
@@ -74,8 +76,6 @@
 			<scope>test</scope>
 		</dependency>
 
-	
-		
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -83,7 +83,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		
 		
 		<dependency>
 <groupId>org.apache.tomcat.embed</groupId>
