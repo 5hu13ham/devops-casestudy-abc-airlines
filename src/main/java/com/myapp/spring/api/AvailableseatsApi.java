@@ -18,7 +18,7 @@ import com.myapp.spring.model.FlightAvailable;
 import com.myapp.spring.repository.AvailableseatsRepository;
 
 @RestController
-@RequestMapping("/api/v1/flights")
+@RequestMapping("/api/v1/flightseats")
 public class AvailableseatsApi {
 	
 	@Autowired

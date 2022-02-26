@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
-@Table(name = "abcflights")
+@Table(name = "abcflightseats")
 public class Flightseats {
 	@Id
 	@Column(name = "flight_id",nullable = false)

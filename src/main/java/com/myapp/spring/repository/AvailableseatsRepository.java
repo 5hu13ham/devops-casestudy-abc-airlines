@@ -16,7 +16,7 @@ public interface AvailableseatsRepository extends JpaRepository<Flightseats, Int
 	
 	
 	
-	@Query(value="select flight_id as flightId ,total_seats-booked_seats  as availableSeats From abcflights where flight_id = ?1 ",nativeQuery=true)
+	@Query(value="select flight_id as flightId ,total_seats-booked_seats  as availableSeats From abcflightseats where flight_id = ?1 ",nativeQuery=true)
 	List<FlightAvailable> findAvailableSeatsByFlightId(Integer flightId);
 	
 	

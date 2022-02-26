@@ -101,7 +101,7 @@ public class AvailableseatsApiTest {
 
 	
 	@Test
-	@DisplayName("Test Get AvailableSeats By FlightId  /api/v1/flights/availableseatsbyid")
+	@DisplayName("Test Get AvailableSeats By FlightId  /api/v1/flightseats/availableseatsbyid")
 	public void testGetAvailableByFlightId() throws Exception {
 
 	// Prepare Mock Flight
@@ -132,7 +132,7 @@ public class AvailableseatsApiTest {
 
 
 	mockMvc.perform(MockMvcRequestBuilders
-	.get("/api/v1/flights/availableseatsbyid")
+	.get("/api/v1/flightseats/availableseatsbyid")
 	
 	.queryParam("flightId",flightId.toString()))
 	// Validate Status should be 200 OK and JSON response received
