@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
-@Table(name = "abcflights")
+@Table(name = "abcflights1")
 public class Search {
 	@Id
 	@Column(name = "flight_id",nullable = false)

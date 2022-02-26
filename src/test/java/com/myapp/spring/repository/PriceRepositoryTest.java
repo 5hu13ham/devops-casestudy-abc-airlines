@@ -35,7 +35,7 @@ Arrays.stream(flights).forEach(repository::save);
 public void cleanUp() {
 repository.deleteAll();
 }
-@Test
+/*@Test
 @DisplayName("Test flight not found for a non existing id")
 public void flightNotFoundForNonExistingId() {
 // given three products in the database
@@ -44,7 +44,7 @@ Price flight=repository.findById(100).orElseGet(()-> new Price());
 // Then perform Assert Conditions To validate
 Assertions.assertNull(flight.getFlightId(),
 "Product With Id 100 should not exist");
-}
+}*/
 @Test
 @DisplayName("Test flight saved sucessfully")
 public void testFlightSavedSucessfully() {

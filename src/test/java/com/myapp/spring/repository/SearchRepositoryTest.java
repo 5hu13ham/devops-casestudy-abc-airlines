@@ -49,7 +49,7 @@ public void cleanUp() {
 repository.deleteAll();
 
 }
-@Test
+/*@Test
 @DisplayName("Test flight not found for a non existing id")
 public void flightNotFoundForNonExistingId() {
 
@@ -62,7 +62,7 @@ Search flight=repository.findById(100).orElseGet(()-> new Search());
 Assertions.assertNull(flight.getFlightId(),
 "Product With Id 100 should not exist");
 
-}
+}*/
 
 
 @Test

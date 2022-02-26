@@ -36,7 +36,7 @@ public class PriceApiTest {
 	@Autowired
 	private MockMvc mockMvc;
 	
-	@Test
+	/*@Test
 	@DisplayName("Test All flights /api/v1/flights/")
 	public void testGetAllProducts() throws Exception {
 
@@ -94,7 +94,7 @@ public class PriceApiTest {
 
 
 
-	}
+	}*/
 
 	
 	@Test
